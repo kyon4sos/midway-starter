@@ -2,10 +2,10 @@ import { BaseEntity } from './base-entity';
 
 export class BaseService {
   //   @Inject()
-  private entity: BaseEntity;
+  private entity: typeof BaseEntity;
 
-  constructor(entiy: BaseEntity) {
-    this.entity = entiy.;
+  constructor(entiy: typeof BaseEntity) {
+    this.entity = entiy;
   }
   page() {
     const { entity } = this;
