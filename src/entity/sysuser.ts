@@ -1,8 +1,13 @@
+import { BaseEntity } from './../base/base-entity';
 import { BaseTable } from '@midwayjs/sequelize';
-import { Column, Model } from 'sequelize-typescript';
+import { AutoIncrement, Column, PrimaryKey } from 'sequelize-typescript';
 
 @BaseTable
-export class SysUser extends Model {
+export class SysUser extends BaseEntity {
+  @AutoIncrement
+  @PrimaryKey
+  @Column
+  id: number;
   @Column
   username: string;
   @Column

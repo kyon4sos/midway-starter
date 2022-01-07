@@ -32,7 +32,7 @@ export default (appInfo: EggAppInfo) => {
   config.keys = appInfo.name + '_1641522387324_2807';
 
   // add your config here
-  config.middleware = [];
+  config.middleware = ['notfoundHandler'];
 
   config.midwayFeature = {
     // true 代表使用 midway logger

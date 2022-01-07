@@ -21,3 +21,13 @@ export class UserVo {
   @Rule(RuleType.string().required())
   phone: string;
 }
+
+export class UserLogin {
+  @CreateApiPropertyDoc('username')
+  @Rule(RuleType.string().required())
+  username: string;
+
+  @CreateApiPropertyDoc('password')
+  @Rule(RuleType.string().required())
+  password: string;
+}
