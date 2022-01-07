@@ -5,4 +5,3 @@ export class BaseEntity extends Model {
     return BaseEntity.count();
   }
 }
-

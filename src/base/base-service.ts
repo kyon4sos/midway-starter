@@ -5,7 +5,7 @@ export class BaseService {
   private entity: BaseEntity;
 
   constructor(entiy: BaseEntity) {
-    this.entity = entiy;
+    this.entity = entiy.;
   }
   page() {
     const { entity } = this;

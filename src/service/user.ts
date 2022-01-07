@@ -7,9 +7,8 @@ import { PageInfo } from '../vo/page';
 @Provide()
 export class UserService extends BaseService {
   constructor() {
-    super(SysUser.build());
+    super(SysUser);
   }
-
   findById(id: string) {
     return SysUser.findByPk(id);
   }
