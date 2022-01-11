@@ -14,7 +14,7 @@ import { BaseController } from '../base/base-controller';
 import { Brcypt } from '../util/brcypt';
 
 @Provide()
-@Controller('/')
+@Controller('/api')
 export class AuthController extends BaseController {
   @Inject()
   jwtService: JwtService;

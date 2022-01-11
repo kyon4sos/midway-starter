@@ -5,11 +5,16 @@ import { PassportMiddleware } from '@midwayjs/passport';
 import * as passport from 'passport';
 import { JwtStrategy } from './jwt-strategy';
 
-@Provide()
+@Provide('jwtPassportMiddleware')
 export class JwtPassportMiddleware extends PassportMiddleware(JwtStrategy) {
   getAuthenticateOptions():
-    | Promise<passport.AuthenticateOptions>
-    | passport.AuthenticateOptions {
-    return {};
+    | passport.AuthenticateOptions
+    | Promise<passport.AuthenticateOptions> {
+    return {
+      successMessage: '失败',
+      state: '2000',
+      failureMessage: '没权限',
+      failWithError: true,
+    };
   }
 }

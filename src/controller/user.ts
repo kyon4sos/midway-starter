@@ -14,7 +14,7 @@ import { UserQuery } from './../vo/user-query';
 import { UserService } from './../service/user';
 
 @Provide()
-@Controller('/')
+@Controller('/api', { middleware: ['jwtPassportMiddleware'] })
 export class UserController extends BaseController {
   @Inject()
   jwtService: JwtService;
@@ -22,7 +22,7 @@ export class UserController extends BaseController {
   userService: UserService;
 
   @CreateApiDoc().summary('获取用户').build()
-  @Get('/user')
+  @Get('/sysuser', { middleware: ['jwtPassportMiddleware'] })
   async index(@Query(ALL) user: UserQuery) {
     const { page, size } = user;
     const users = await this.userService.findPage({ page, size });
